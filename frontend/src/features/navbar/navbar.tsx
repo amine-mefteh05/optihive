@@ -4,7 +4,7 @@ import Links from "./links";
 import DarkModeToggle from "./darkmode-toggle";
 function Navbar() {
   return (
-    <header className="flex justify-between shadow-lg items-center px-4 sticky top-0 z-50">
+    <header className="flex justify-between shadow-lg items-center px-4 sticky top-0 z-50 bg-background/50 backdrop-blur">
       <Image
         src="/logo.png"
         width={824}
