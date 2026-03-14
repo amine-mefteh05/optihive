@@ -1,9 +1,10 @@
 import Button from "@/components/ui/button";
+import Link from "next/link";
 function Home() {
   return (
     <section
       id="home"
-      className=" h-full flex flex-col gap-10 items-center justify-center"
+      className=" h-screen flex flex-col gap-10 items-center text-center justify-center"
     >
       <h1 className="text-6xl font-bold flex flex-col gap-5">
         <div>Organized Devs.</div>
@@ -17,9 +18,11 @@ function Home() {
         <Button size="md" variant="primary">
           Get Started
         </Button>
-        <Button size="md" variant="secondary">
-          Learn More
-        </Button>
+        <Link href="#solutions">
+          <Button size="md" variant="secondary">
+            Learn More
+          </Button>
+        </Link>
       </div>
     </section>
   );

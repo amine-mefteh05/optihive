@@ -1,14 +1,15 @@
-import Image from "next/image";
 import Navbar from "@/features/navbar/navbar";
-import Home from "@/features/main/home";
+import Home from "@/features/main/home/home";
 import Solutions from "@/features/main/solutions/solutions";
+import About from "@/features/main/about/about";
 export default function Page() {
   return (
     <>
       <Navbar />
-      <main className="h-full">
+      <main className="flex flex-col gap-12">
         <Home />
         <Solutions />
+        <About />
       </main>
     </>
   );
