@@ -1,13 +1,14 @@
 "use client";
 
-import Button from "@/components/ui/button";
-import Input from "@/components/ui/input";
-import { H3Gradiant } from "@/components/ui/title-gradiant";
+import Button from "@/components/ui/button/button";
+import Input from "@/components/ui/input/input";
+import { H3Gradiant } from "@/components/ui/title-gradiant/title-gradiant";
 import Link from "next/link";
-
+import getDarkmode from "@/features/darkmode/getDarkmode";
 function Login() {
+  getDarkmode();
   return (
-    <div className="flex flex-col gap-5 max-w-lg w-full dark:border-1 dark:border-white/20 rounded-lg p-5 shadow-lg">
+    <div className="flex flex-col gap-5 max-w-lg w-full dark:border dark:border-white/20 rounded-lg p-5 shadow-lg">
       <H3Gradiant className="text-center">Welcome Back</H3Gradiant>
       <form className="flex flex-col gap-5">
         <Input type="email" placeholder="Email" name="email" />

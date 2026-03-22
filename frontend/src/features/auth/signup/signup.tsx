@@ -1,11 +1,13 @@
 "use client";
-import Accordion from "@/components/ui/accordion";
-import Button from "@/components/ui/button";
-import Input from "@/components/ui/input";
-import { H3Gradiant } from "@/components/ui/title-gradiant";
+import Accordion from "@/components/ui/accordion/accordion";
+import Button from "@/components/ui/button/button";
+import Input from "@/components/ui/input/input";
+import { H3Gradiant } from "@/components/ui/title-gradiant/title-gradiant";
 import { AlertCircle } from "lucide-react";
 import Link from "next/link";
+import getDarkmode from "@/features/darkmode/getDarkmode";
 function Signup() {
+  getDarkmode();
   return (
     <div className="flex flex-col gap-5 max-w-2xl w-full dark:border dark:border-white/20 rounded-lg p-5 shadow-lg">
       <H3Gradiant className="text-center">Create Account</H3Gradiant>

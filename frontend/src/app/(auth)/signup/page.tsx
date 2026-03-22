@@ -1,6 +1,5 @@
 import Signup from "@/features/auth/signup/signup";
 import Image from "next/image";
-
 function Page() {
   return (
     <div className="flex flex-col gap-10 items-center justify-center h-screen">

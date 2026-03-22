@@ -1,5 +1,5 @@
 import Image from "next/image";
-import Button from "@/components/ui/button";
+import Button from "@/components/ui/button/button";
 import Links from "./links";
 import DarkModeToggle from "./darkmode-toggle";
 import Link from "next/link";

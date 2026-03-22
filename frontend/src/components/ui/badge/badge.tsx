@@ -2,7 +2,7 @@ type BadgeProps = React.HTMLAttributes<HTMLDivElement> & {
   children: React.ReactNode;
 };
 
-function Badge({ children, ...props }: BadgeProps) {
+function Badge({ children, ...props }: Readonly<BadgeProps>) {
   return (
     <div
       {...props}
