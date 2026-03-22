@@ -19,7 +19,7 @@ function Login() {
           required
           minLength={8}
         />
-        <SubmitButton />
+        <SubmitButton text="Login" />
       </form>
       <p className="text-center">
         Don't have an account?{" "}
