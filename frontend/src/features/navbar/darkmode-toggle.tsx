@@ -1,7 +1,7 @@
 "use client";
 import useDarkMode from "../darkmode/useDarkMode";
 import { Sun, Moon } from "lucide-react";
-import Button from "@/components/ui/button";
+import Button from "@/components/ui/button/button";
 import { useEffect, useState } from "react";
 function DarkModeToggle() {
   const [darkMode, toggleDarkMode] = useDarkMode();
