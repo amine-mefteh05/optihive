@@ -1,6 +1,7 @@
 type buttonProps = React.ButtonHTMLAttributes<HTMLButtonElement> & {
   size: "sm" | "md" | "lg";
   variant: "primary" | "secondary";
+  className?: string;
 };
 
 const sizeClass = {
@@ -18,11 +19,12 @@ function button({
   size = "md",
   variant = "primary",
   children,
+  className,
   ...props
 }: Readonly<buttonProps>) {
   return (
     <button
-      className={`${sizeClass[size]} ${variantClass[variant]} rounded-lg cursor-pointer`}
+      className={`${sizeClass[size]} ${className} ${variantClass[variant]} rounded-lg cursor-pointer`}
       {...props}
     >
       {children}

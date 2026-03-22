@@ -16,13 +16,11 @@ function Home() {
       </p>
       <div className="flex gap-5">
         <Button size="md" variant="primary">
-          Get Started
+          <Link href="/signup">Get Started</Link>
         </Button>
-        <Link href="#solutions">
-          <Button size="md" variant="secondary">
-            Learn More
-          </Button>
-        </Link>
+        <Button size="md" variant="secondary">
+          <Link href="#solutions">Learn More</Link>
+        </Button>
       </div>
     </section>
   );

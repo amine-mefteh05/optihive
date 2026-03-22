@@ -1,7 +1,7 @@
 "use client";
 import { useState } from "react";
 import { useEffect } from "react";
-import { getItem, setItem } from "./darkmode";
+import { getItem, setItem } from "./localstorage";
 function useLocalStorage<T>(key: string, initialValue: T) {
   const [value, setValue] = useState<T>(() => {
     return getItem<T>(key) ?? initialValue;
