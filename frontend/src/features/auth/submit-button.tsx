@@ -1,7 +1,11 @@
 "use client";
 import { useFormStatus } from "react-dom";
 import Button from "@/components/ui/button/button";
-function SubmitButton() {
+
+type submitButtonProps = {
+  text: string;
+};
+function SubmitButton({ text }: Readonly<submitButtonProps>) {
   const { pending } = useFormStatus();
   return (
     <Button
@@ -11,7 +15,7 @@ function SubmitButton() {
       variant="primary"
       disabled={pending}
     >
-      {pending ? "Submitting..." : "Sign Up"}
+      {pending ? "Submitting..." : text}
     </Button>
   );
 }

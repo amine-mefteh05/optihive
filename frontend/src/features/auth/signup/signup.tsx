@@ -41,7 +41,7 @@ function Signup() {
           8 characters and must contain at least one uppercase letter, one
           lowercase letter and one number
         </Accordion>
-        <SubmitButton />
+        <SubmitButton text="Sign Up" />
       </form>
       <p className="text-center">
         Already have an account?{" "}
