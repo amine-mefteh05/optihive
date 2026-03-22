@@ -5,9 +5,10 @@ import Input from "@/components/ui/input/input";
 import { H3Gradiant } from "@/components/ui/title-gradiant/title-gradiant";
 import { AlertCircle } from "lucide-react";
 import Link from "next/link";
-import getDarkmode from "@/features/darkmode/getDarkmode";
+import useApplyDarkmode from "@/features/darkmode/useApplyDarkmode";
+import Password from "@/components/ui/input/password/password";
 function Signup() {
-  getDarkmode();
+  useApplyDarkmode();
   return (
     <div className="flex flex-col gap-5 max-w-2xl w-full dark:border dark:border-white/20 rounded-lg p-5 shadow-lg">
       <H3Gradiant className="text-center">Create Account</H3Gradiant>
@@ -22,7 +23,7 @@ function Signup() {
           <AlertCircle className="inline mr-2" /> email must be a valid email
           address
         </Accordion>
-        <Input type="password" placeholder="Password" name="password" />
+        <Password name="password" placeholder="Password" />
         <Accordion className="text-sm">
           <AlertCircle className="inline mr-2" /> password must contain at least
           8 characters and must contain at least one uppercase letter, one

@@ -34,7 +34,11 @@
   }
 }
 * {
-  transition: all 0.3s ease-in-out;
+  transition:
+    color,
+    background-color,
+    border-color,
+    box-shadow 0.3s ease-in-out;
 }
 html {
   scroll-behavior: smooth;
