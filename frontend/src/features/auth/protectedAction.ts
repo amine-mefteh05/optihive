@@ -1,3 +1,4 @@
+"use server";
 import { redirect } from "next/navigation";
 import { getToken } from "./token";
 export const protectedAction = async () => {

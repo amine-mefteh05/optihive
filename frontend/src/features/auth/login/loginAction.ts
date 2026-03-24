@@ -16,7 +16,6 @@ export const loginAction = async (
     await setToken(response.data.token);
     return { error: null } as loginActionState;
   } catch (error: any) {
-    console.error(error);
     return {
       error: error.response.data.message || "Something went wrong",
     } as loginActionState;

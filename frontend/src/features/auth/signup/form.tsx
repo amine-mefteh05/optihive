@@ -11,16 +11,20 @@ import {
   PASSWORD_MIN_LENGTH,
 } from "../../../../../constants.js";
 import useApplyDarkmode from "@/features/darkmode/useApplyDarkmode";
+import { useActionState } from "react";
+import { signupAction } from "./signupAction";
 
-const isPending = false; // TODO: implement useActionState
 function Form() {
   useApplyDarkmode();
+  const [state, formAction, isPending] = useActionState(signupAction, {
+    error: null,
+  });
   return (
-    <form className="flex flex-col gap-5">
+    <form className="flex flex-col gap-5" action={formAction}>
       <Input
         type="text"
         placeholder="Name"
-        name="name"
+        name="username"
         required
         minLength={USERNAME_MIN_LENGTH}
         maxLength={USERNAME_MAX_LENGTH}
@@ -55,6 +59,12 @@ function Form() {
       >
         {isPending ? "Submitting..." : "Sign Up"}
       </Button>
+      {state.error && (
+        <Accordion variant="alert">
+          <AlertCircle className="inline mr-2" />
+          {state.error}
+        </Accordion>
+      )}
     </form>
   );
 }
