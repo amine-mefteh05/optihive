@@ -27,19 +27,16 @@
     @apply bg-background text-foreground;
     font-family: Arial, Helvetica, sans-serif;
   }
+  * {
+    transition: all 0.3s ease-in-out;
+  }
 }
 @layer utilities {
   .underline-on-hover {
     @apply border-b-2 border-foreground/0 hover:border-foreground;
   }
 }
-* {
-  transition:
-    color,
-    background-color,
-    border-color,
-    box-shadow 0.3s ease-in-out;
-}
+
 html {
   scroll-behavior: smooth;
 }
