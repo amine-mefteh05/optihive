@@ -47,6 +47,12 @@ export const login = async (req, res, next) => {
 export const getMe = async (req, res, next) => {
   try {
     const user = await User.findById(req.userId);
+    if (!user) {
+      const error = new Error("User not found");
+      error.name = "UserNotFound";
+      error.statusCode = 404;
+      next(error);
+    }
     const { password, ...userWithoutPassword } = user.toObject();
     res.status(200).json(userWithoutPassword);
   } catch (error) {
