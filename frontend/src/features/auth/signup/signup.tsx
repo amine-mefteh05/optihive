@@ -7,6 +7,11 @@ import Link from "next/link";
 import useApplyDarkmode from "@/features/darkmode/useApplyDarkmode";
 import Password from "@/components/ui/input/password/password";
 import SubmitButton from "../submit-button";
+import {
+  USERNAME_MAX_LENGTH,
+  USERNAME_MIN_LENGTH,
+  PASSWORD_MIN_LENGTH,
+} from "../../../../../constants.js";
 function Signup() {
   useApplyDarkmode();
   return (
@@ -18,12 +23,13 @@ function Signup() {
           placeholder="Name"
           name="name"
           required
-          minLength={4}
-          maxLength={16}
+          minLength={USERNAME_MIN_LENGTH}
+          maxLength={USERNAME_MAX_LENGTH}
         />
         <Accordion className="text-sm">
-          <AlertCircle className="inline mr-2" /> name must contain between 4
-          and 16 characters and must contain only letters and numbers
+          <AlertCircle className="inline mr-2" /> name must contain between{" "}
+          {USERNAME_MIN_LENGTH} and {USERNAME_MAX_LENGTH} characters and must
+          contain only letters and numbers
         </Accordion>
         <Input type="email" placeholder="Email" name="email" required />
         <Accordion className="text-sm">
@@ -34,12 +40,12 @@ function Signup() {
           name="password"
           placeholder="Password"
           required
-          minLength={8}
+          minLength={PASSWORD_MIN_LENGTH}
         />
         <Accordion className="text-sm">
-          <AlertCircle className="inline mr-2" /> password must contain at least
-          8 characters and must contain at least one uppercase letter, one
-          lowercase letter and one number
+          <AlertCircle className="inline mr-2" /> password must contain at least{" "}
+          {PASSWORD_MIN_LENGTH} characters and must contain at least one
+          uppercase letter, one lowercase letter and one number
         </Accordion>
         <SubmitButton text="Sign Up" />
       </form>
