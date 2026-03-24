@@ -46,8 +46,8 @@ export const login = async (req, res, next) => {
 
 export const getMe = async (req, res, next) => {
   try {
-    const user = await User.findById(req.user.id);
-    const { password, ...userWithoutPassword } = user;
+    const user = await User.findById(req.userId);
+    const { password, ...userWithoutPassword } = user.toObject();
     res.status(200).json(userWithoutPassword);
   } catch (error) {
     next(error);
