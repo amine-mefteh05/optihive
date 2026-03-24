@@ -11,6 +11,6 @@ export const protectedAction = async () => {
 export const reverseProtectedAction = async () => {
   const token = await getToken();
   if (token) {
-    redirect("/");
+    redirect("/workspace");
   }
 };

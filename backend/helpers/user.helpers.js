@@ -7,7 +7,7 @@ import {
   PASSWORD_MIN_LENGTH,
   PASSWORD_REGEX,
   EMAIL_REGEX,
-} from "../../constants.js";
+} from "../../constants.mjs";
 export const checkEmailAndPasswordValidity = ({ email, password }) => {
   if (!email) {
     const err = new Error("Email is required");
