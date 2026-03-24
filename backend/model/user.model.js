@@ -24,10 +24,9 @@ const userSchema = new mongoose.Schema(
       match: [EMAIL_REGEX, "Please use a valid email"],
     },
     password: {
+      //validate password in helper because password is hashed
       type: String,
       required: [true, "Password is required"],
-      minlength: PASSWORD_MIN_LENGTH,
-      match: PASSWORD_REGEX,
     },
     avatar: {
       type: Number,
