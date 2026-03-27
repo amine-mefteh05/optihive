@@ -1,17 +1,6 @@
 import User from "../model/user.model.js";
 import { comparePassword } from "./bcrypt.js";
 
-// this helper function checks if the email exists in the database . email must be unique
-export const checkEmailExists = async (email) => {
-  const user = await User.findOne({ email });
-  if (user) {
-    const err = new Error("Email already exists");
-    err.name = "castError";
-    err.statusCode = 409;
-    throw err;
-  }
-};
-
 // this helper function checks if the credentials entered by the user are correct
 export const checkUserCredentials = async (email, password) => {
   const user = await User.findOne({ email });
@@ -21,7 +10,6 @@ export const checkUserCredentials = async (email, password) => {
     err.statusCode = 401;
     throw err;
   }
-  console.log(user);
   const isPasswordValid = await comparePassword(password, user.password);
   if (!isPasswordValid) {
     const err = new Error("Email or password is not correct");

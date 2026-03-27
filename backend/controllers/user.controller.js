@@ -1,18 +1,13 @@
 import User from "../model/user.model.js";
 import { generateToken } from "../helpers/token.helpers.js";
 import { hashPassword } from "../helpers/bcrypt.js";
-import {
-  checkEmailExists,
-  checkUserCredentials,
-} from "../helpers/user.helpers.js";
+import { checkUserCredentials } from "../helpers/user.helpers.js";
 // US1 - Register
 export const register = async (req, res, next) => {
   try {
     const username = req.username;
     const email = req.email;
     const password = req.password;
-    console.log(username, email, password);
-    await checkEmailExists(email);
     const hashedPassword = await hashPassword(password);
     const user = await User.create({
       username,

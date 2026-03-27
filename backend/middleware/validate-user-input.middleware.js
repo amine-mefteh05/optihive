@@ -6,7 +6,7 @@ import {
   PASSWORD_MIN_LENGTH,
   PASSWORD_REGEX,
 } from "../../constants.mjs";
-export const validateUsername = (req, res, next) => {
+export const validateUsername = (req, _res, next) => {
   try {
     const username = req.body?.username?.toString();
     if (!username) {
@@ -36,7 +36,7 @@ export const validateUsername = (req, res, next) => {
   }
 };
 
-export const validateEmail = (req, res, next) => {
+export const validateEmail = (req, _res, next) => {
   try {
     const email = req.body?.email?.toString();
     if (!email) {
@@ -56,7 +56,7 @@ export const validateEmail = (req, res, next) => {
   }
 };
 
-export const validatePassword = (req, res, next) => {
+export const validatePassword = (req, _res, next) => {
   try {
     const password = req.body?.password?.toString();
     if (!password) {
