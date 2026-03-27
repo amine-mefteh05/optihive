@@ -1,10 +1,5 @@
-import Navbar from "./navbar/navbar";
 function Main() {
-  return (
-    <main>
-      <Navbar />
-    </main>
-  );
+  return <section className="h-full w-full"></section>;
 }
 
 export default Main;

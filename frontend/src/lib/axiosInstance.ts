@@ -8,6 +8,8 @@ const api = axios.create({
 });
 api.interceptors.request.use(async (config) => {
   try {
+    if (config.headers.Authorization)
+      return config; /* to handle cached requests */
     const token = await getToken();
     if (token) {
       config.headers.Authorization = `Bearer ${token}`;
