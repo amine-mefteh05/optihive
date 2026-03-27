@@ -17,4 +17,5 @@ router.post(
 );
 router.post("/login", validateEmail, validatePassword, login);
 router.get("/me", authMiddleware, getMe);
+router.patch("/me", authMiddleware, updateProfile);
 export default router;

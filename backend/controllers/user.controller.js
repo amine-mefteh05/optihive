@@ -50,3 +50,14 @@ export const getMe = async (req, res, next) => {
     next(error);
   }
 };
+
+export const updateProfile = async (req, res, next) => {
+  try {
+    const info = req.body;
+    const userId = req.userId;
+    await User.findByIdAndUpdate(userId, info);
+    res.status(200).json({ message: "Profile updated successfully" });
+  } catch (error) {
+    next(error);
+  }
+};
