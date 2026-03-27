@@ -13,7 +13,7 @@ const projectSchema = new mongoose.Schema(
     },
     projectDescription: {
       type: String,
-      required: true,
+      default: "",
     },
     invitationCode: {
       type: String,
@@ -25,7 +25,7 @@ const projectSchema = new mongoose.Schema(
     },
     Status: {
       type: String,
-      enum: ["active", "completed"],
+      enum: ["active", "completed", "deadline_passed"],
       default: "active",
     },
   },
