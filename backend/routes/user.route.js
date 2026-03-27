@@ -1,5 +1,10 @@
 import { Router } from "express";
-import { register, login, getMe } from "../controllers/user.controller.js";
+import {
+  register,
+  login,
+  getMe,
+  updateProfile,
+} from "../controllers/user.controller.js";
 import { authMiddleware } from "../middleware/auth.middleware.js";
 import {
   validateUsername,
