@@ -5,6 +5,7 @@ import chalk from "chalk";
 import cookieParser from "cookie-parser";
 import { errorHandler } from "./middleware/errorHandling.middleware.js";
 import userRoutes from "./routes/user.route.js";
+import projectRoutes from "./routes/project.route.js";
 import { PORT } from "./config/env.js";
 import connectDB from "./config/databaseConnection.js";
 const app = express();
@@ -15,7 +16,7 @@ app.use(morgan("dev"));
 app.use(cookieParser());
 
 app.use("/api/v1/users", userRoutes);
-
+app.use("/api/v1/projects", projectRoutes);
 app.use(errorHandler);
 
 app.listen(PORT, async () => {
