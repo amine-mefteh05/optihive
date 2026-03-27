@@ -3,8 +3,6 @@ import {
   USERNAME_MIN_LENGTH,
   USERNAME_MAX_LENGTH,
   USERNAME_REGEX,
-  PASSWORD_MIN_LENGTH,
-  PASSWORD_REGEX,
   EMAIL_REGEX,
 } from "../../constants.mjs";
 const userSchema = new mongoose.Schema(
@@ -32,6 +30,14 @@ const userSchema = new mongoose.Schema(
       type: Number,
       enum: [1, 2, 3, 4, 5, 6, 7, 8, 9, 10],
       default: 1,
+    },
+    roleName: {
+      type: String,
+      default: "",
+    },
+    roleDescription: {
+      type: String,
+      default: "",
     },
   },
   { timestamps: true },
