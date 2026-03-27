@@ -50,3 +50,29 @@ export const getProjects = async (req, res, next) => {
     next(err);
   }
 };
+
+export const joinProject = async (req, res, next) => {
+  try {
+    const { invitationCode } = req.body;
+    const userId = req.userId;
+    if (!invitationCode) {
+      const error = new Error("Invitation code is required");
+      error.statusCode = 400;
+      throw error;
+    }
+    const project = await Project.findOne({ invitationCode });
+    if (!project) {
+      const error = new Error("Project not found");
+      error.statusCode = 404;
+      throw error;
+    }
+    await Membership.create({
+      userId,
+      projectId: project._id,
+      role: "member",
+    });
+    return res.status(201).json({ message: "Project joined successfully" });
+  } catch (err) {
+    next(err);
+  }
+};

@@ -2,10 +2,12 @@ import { Router } from "express";
 import {
   createProject,
   getProjects,
+  joinProject,
 } from "../controllers/project.controller.js";
 import { authMiddleware } from "../middleware/auth.middleware.js";
 const router = Router();
 
-router.post("/create", authMiddleware, createProject);
 router.get("/", authMiddleware, getProjects);
+router.post("/create", authMiddleware, createProject);
+router.post("/join", authMiddleware, joinProject);
 export default router;

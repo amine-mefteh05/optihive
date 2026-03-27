@@ -20,6 +20,6 @@ const membershipSchema = new mongoose.Schema(
   },
   { timestamps: true },
 );
-
+membershipSchema.index({ userId: 1, projectId: 1 }, { unique: true });
 const Membership = mongoose.model("Membership", membershipSchema);
 export default Membership;
