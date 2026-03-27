@@ -1,7 +1,12 @@
+import React from "react";
 type buttonProps = React.ButtonHTMLAttributes<HTMLButtonElement> & {
   size: "sm" | "md" | "lg";
   variant: "primary" | "secondary";
   className?: string;
+  asChild?: boolean;
+  children:
+    | React.ReactNode
+    | ((props: { className: string }) => React.ReactNode);
 };
 
 const sizeClass = {
@@ -12,19 +17,31 @@ const sizeClass = {
 
 const variantClass = {
   primary: "bg-primary text-[#171717] hover:bg-primary-hover",
-  secondary: "bg-background hover:bg-foreground/10",
+  secondary: "bg-background text-foreground hover:bg-foreground/10",
 };
 
 function button({
   size = "md",
   variant = "primary",
   children,
-  className,
+  className = "",
+  asChild = false,
   ...props
 }: Readonly<buttonProps>) {
+  if (asChild && React.isValidElement(children)) {
+    const child = children as React.ReactElement<Record<string, unknown>>;
+    const Comp = child.type as React.ElementType;
+
+    return (
+      <Comp
+        {...child.props}
+        className={`${sizeClass[size]} ${variantClass[variant]} ${className} rounded-lg cursor-pointer`}
+      />
+    );
+  }
   return (
     <button
-      className={`${sizeClass[size]} ${className} ${variantClass[variant]} rounded-lg cursor-pointer`}
+      className={`${sizeClass[size]} ${variantClass[variant]} ${className} rounded-lg cursor-pointer`}
       {...props}
     >
       {children}

@@ -6,7 +6,7 @@ import {
   PASSWORD_MIN_LENGTH,
   PASSWORD_REGEX,
   EMAIL_REGEX,
-} from "../../constants.js";
+} from "../../constants.mjs";
 const userSchema = new mongoose.Schema(
   {
     username: {

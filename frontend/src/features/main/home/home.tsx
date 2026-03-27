@@ -15,10 +15,10 @@ function Home() {
         workspace solutions.
       </p>
       <div className="flex gap-5">
-        <Button size="md" variant="primary">
+        <Button size="md" variant="primary" asChild>
           <Link href="/signup">Get Started</Link>
         </Button>
-        <Button size="md" variant="secondary">
+        <Button size="md" variant="secondary" asChild>
           <Link href="#solutions">Learn More</Link>
         </Button>
       </div>

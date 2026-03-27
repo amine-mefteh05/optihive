@@ -12,14 +12,14 @@ function Navbar() {
         height={303}
         className="w-64"
         alt="logo"
-        loading="eager"
+        priority
       ></Image>
       <Links />
       <div className="flex gap-4">
-        <Button size="md" variant="primary">
+        <Button size="md" variant="primary" asChild>
           <Link href="/login">Login</Link>
         </Button>
-        <Button size="md" variant="secondary">
+        <Button size="md" variant="secondary" asChild>
           <Link href="/signup">Register</Link>
         </Button>
         <DarkModeToggle />
