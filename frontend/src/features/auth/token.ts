@@ -6,7 +6,7 @@ export async function getToken() {
   return cookieStore?.value;
 }
 export async function setToken(token: string) {
-  const cookieStore = (await cookies()).set("token", token, {
+  (await cookies()).set("token", token, {
     httpOnly: true,
     secure: true,
     sameSite: "strict",
@@ -14,5 +14,5 @@ export async function setToken(token: string) {
   });
 }
 export async function deleteToken() {
-  const cookieStore = (await cookies()).delete("token");
+  (await cookies()).delete("token");
 }
