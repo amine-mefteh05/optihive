@@ -10,12 +10,10 @@ import {
   USERNAME_MAX_LENGTH,
   PASSWORD_MIN_LENGTH,
 } from "../../../../../constants.mjs";
-import useApplyDarkmode from "@/features/darkmode/useApplyDarkmode";
 import { useActionState } from "react";
 import { signupAction } from "./signupAction";
 
 function Form() {
-  useApplyDarkmode();
   const [state, formAction, isPending] = useActionState(signupAction, {
     error: null,
   });

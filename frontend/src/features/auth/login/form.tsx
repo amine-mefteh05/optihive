@@ -6,10 +6,8 @@ import { useActionState } from "react";
 import Button from "@/shared/components/ui/button/button";
 import Accordion from "@/shared/components/ui/accordion/accordion";
 import { AlertCircle } from "lucide-react";
-import useApplyDarkmode from "@/features/darkmode/useApplyDarkmode";
 
 function Form() {
-  useApplyDarkmode();
   const [state, formAction, isPending] = useActionState(loginAction, {
     error: null,
   });
