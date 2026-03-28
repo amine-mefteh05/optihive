@@ -1,4 +1,4 @@
-import { H3Gradiant } from "@/components/ui/title-gradiant/title-gradiant";
+import { H3Gradiant } from "@/shared/components/ui/title-gradiant/title-gradiant";
 import Link from "next/link";
 import Form from "./form";
 async function Login() {

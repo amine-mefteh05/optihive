@@ -1,10 +1,10 @@
 "use client";
 
-import Input from "@/components/ui/input/input";
-import Password from "@/components/ui/input/password/password";
-import Accordion from "@/components/ui/accordion/accordion";
+import Input from "@/shared/components/ui/input/input";
+import Password from "@/shared/components/ui/input/password/password";
+import Accordion from "@/shared/components/ui/accordion/accordion";
 import { AlertCircle } from "lucide-react";
-import Button from "@/components/ui/button/button";
+import Button from "@/shared/components/ui/button/button";
 import {
   USERNAME_MIN_LENGTH,
   USERNAME_MAX_LENGTH,

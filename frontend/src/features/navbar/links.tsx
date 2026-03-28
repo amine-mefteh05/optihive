@@ -1,5 +1,5 @@
 import Link from "next/link";
-import Button from "@/components/ui/button/button";
+import Button from "@/shared/components/ui/button/button";
 function Links() {
   return (
     <div className="flex gap-5 max-md:justify-around max-md:w-full">

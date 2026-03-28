@@ -1,4 +1,4 @@
-import Accordion from "@/components/ui/accordion/accordion";
+import Accordion from "@/shared/components/ui/accordion/accordion";
 import { getUserInfo } from "./getUserInfo";
 import { AlertCircle } from "lucide-react";
 import Image from "next/image";

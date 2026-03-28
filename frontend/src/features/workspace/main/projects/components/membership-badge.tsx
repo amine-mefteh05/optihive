@@ -32,12 +32,7 @@ const roleConfig = {
 };
 
 function MembershipBadge({ role }: MembershipBadgeProps) {
-  const {
-    label,
-    icon: Icon,
-    className,
-    iconClassName,
-  } = roleConfig["project_manager"];
+  const { label, icon: Icon, className, iconClassName } = roleConfig[role];
 
   return (
     <div

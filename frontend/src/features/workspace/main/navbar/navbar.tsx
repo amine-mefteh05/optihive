@@ -1,7 +1,7 @@
 import { Suspense } from "react";
 import UserCard from "./user-card";
 import Image from "next/image";
-import Accordion from "@/components/ui/accordion/accordion";
+import Accordion from "@/shared/components/ui/accordion/accordion";
 function Navbar() {
   return (
     <nav className="flex items-center justify-between pr-5 w-full bg-gray-500/10 backdrop-blur-sm shadow-lg">

@@ -1,9 +1,10 @@
 "use server";
 import api from "@/lib/axiosInstance";
 import { revalidateTag } from "next/cache";
-
 interface State {
+  success: boolean | null;
   error: string | null;
+  timespan: number;
 }
 const joinProjectAction = async (
   _prevState: State,
@@ -13,9 +14,13 @@ const joinProjectAction = async (
   try {
     await api.post("/projects/join", { invitationCode });
     revalidateTag("projects", "max");
-    return { error: null };
+    return { success: true, error: null, timespan: Date.now() };
   } catch (error) {
-    return { error: "An unexpected error occurred" };
+    return {
+      success: false,
+      error: "An unexpected error occurred",
+      timespan: Date.now(),
+    };
   }
 };
 

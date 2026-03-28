@@ -1,10 +1,9 @@
-import { H3Gradiant } from "@/components/ui/title-gradiant/title-gradiant";
+import { H3Gradiant } from "@/shared/components/ui/title-gradiant/title-gradiant";
 import { getProjectsAction } from "./getProjectsAction";
 import JoinProjectCard from "./joinProject/joinProjectCard";
 import ProjectCard from "./components/projectCard";
 async function Projects() {
   const projects = await getProjectsAction();
-  console.log(projects);
   return (
     <div className="flex flex-col gap-5">
       <H3Gradiant>Projects</H3Gradiant>

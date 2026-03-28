@@ -1,6 +1,6 @@
 import { LogOut, Settings, Grid3x3, Plus, User } from "lucide-react";
 import Link from "@/features/workspace/components/link";
-import { H4Gradiant } from "@/components/ui/title-gradiant/title-gradiant";
+import { H4Gradiant } from "@/shared/components/ui/title-gradiant/title-gradiant";
 import logoutAction from "./logoutAction";
 function Sidebar() {
   return (

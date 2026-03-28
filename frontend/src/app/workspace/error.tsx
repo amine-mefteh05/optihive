@@ -1,5 +1,5 @@
 "use client";
-import ErrorComponent from "@/components/ui/error/error";
+import ErrorComponent from "@/shared/components/ui/error/error";
 function Error() {
   return <ErrorComponent />;
 }

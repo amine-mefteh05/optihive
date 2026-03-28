@@ -1,4 +1,3 @@
-import { H5Gradiant } from "@/components/ui/title-gradiant/title-gradiant";
 import Badge from "./badge";
 import Field from "./field";
 import MembershipBadge from "./membership-badge";
