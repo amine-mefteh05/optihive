@@ -6,7 +6,7 @@ type accordionProps = React.HTMLAttributes<HTMLDivElement> & {
 
 const variants = {
   default: "text-foreground border-foreground/20 border-1",
-  alert: "text-red-500 border-red-500 border-1",
+  alert: "text-red-500 border-red-500 bg-red-500/10 border-1",
 };
 function accordion({
   children,

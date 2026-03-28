@@ -6,7 +6,7 @@ function Sidebar() {
   return (
     <aside className="w-64 min-h-full flex flex-col gap-5 py-5 justify-between px-0 shadow-lg">
       <div className="flex flex-col gap-2">
-        <H4Gradiant className="mb-2 px-2">Projects</H4Gradiant>
+        <H4Gradiant className="mb-2 px-2">OptiHive</H4Gradiant>
         <Link href="/workspace" className="px-5 py-2">
           <Grid3x3 size={20} />
           <p>Projects</p>

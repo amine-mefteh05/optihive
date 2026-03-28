@@ -1,8 +1,8 @@
 import { protectedAction } from "@/features/auth/protectedAction";
-import Main from "@/features/workspace/main/main";
+import Projects from "@/features/workspace/main/projects/projects";
 async function Page() {
   await protectedAction();
-  return <Main />;
+  return <Projects />;
 }
 
 export default Page;

@@ -8,7 +8,7 @@ function Layout({ children }: Readonly<{ children: React.ReactNode }>) {
       </header>
       <main className="flex h-full w-full flex-1">
         <Sidebar />
-        {children}
+        <section className="flex-1 p-5">{children}</section>
       </main>
     </div>
   );
