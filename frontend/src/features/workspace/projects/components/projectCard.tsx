@@ -34,20 +34,18 @@ function ProjectCard({
       <h4 className="text-2xl font-bold text-center bg-primary/50">
         {projectName}
       </h4>
-      <div className="flex flex-col gap-1 p-2">
-        <p className="text-sm">Deadline: {formatDate(deadline)}</p>
-        <Badge status={Status} />
-      </div>
-      <div className="flex flex-col mt-auto p-2 gap-1">
+      <div className="flex flex-col mt-auto p-2 gap-4">
+        <Field label="deadline" value={formatDate(deadline)} />
         <Field label="Created at" value={formatDate(createdAt)} />
         <Field label="Joined at" value={formatDate(joinedAt)} />
         <Field
           label="Project created at"
           value={formatDate(projectCreatedAt)}
         />
-      </div>
-      <div className="flex flex-col items-start gap-2 p-2">
-        <MembershipBadge role={role as "project_manager" | "member"} />
+        <div className="flex items-center justify-between gap-2 p-2">
+          <Badge status={Status} />
+          <MembershipBadge role={role as "project_manager" | "member"} />
+        </div>
       </div>
     </div>
   );
