@@ -1,4 +1,4 @@
-import Button from "@/components/ui/button/button";
+import Button from "@/shared/components/ui/button/button";
 import Link from "next/link";
 function Home() {
   return (

@@ -35,6 +35,9 @@
   .underline-on-hover {
     @apply border-b-2 border-foreground/0 hover:border-foreground;
   }
+  .card-dimensions {
+    @apply w-72 h-80;
+  }
 }
 
 html {

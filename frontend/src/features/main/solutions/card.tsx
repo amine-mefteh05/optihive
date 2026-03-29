@@ -1,4 +1,4 @@
-import Badge from "@/components/ui/badge/badge";
+import Badge from "@/shared/components/ui/badge/badge";
 type CardProps = React.HTMLAttributes<HTMLDivElement> & {
   title: string;
   description: string;

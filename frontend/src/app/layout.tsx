@@ -1,6 +1,10 @@
 import type { Metadata } from "next";
 import "./globals.css";
+import "@radix-ui/themes/styles.css";
 import { Inter } from "next/font/google";
+import { ToastContainer } from "react-toastify";
+import DarkmodeProvider from "@/features/darkmode/darkmodeprovider";
+import { Theme } from "@radix-ui/themes";
 const inter = Inter({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
@@ -55,8 +59,12 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en">
-      <body className={`${inter.className} antialiased`}>{children}</body>
+    <html lang="en" data-scroll-behavior="smooth">
+      <body className={`${inter.className} antialiased`}>
+        <Theme>{children}</Theme>
+        <ToastContainer position="bottom-right" />
+        <DarkmodeProvider />
+      </body>
     </html>
   );
 }
