@@ -43,6 +43,10 @@ export const getProjects = async (req, res, next) => {
         joinedAt: membership.createdAt,
         projectCreatedAt: membership.projectId.createdAt,
         role: membership.role,
+        invitationCode:
+          membership.role === "project_manager"
+            ? membership.projectId.invitationCode
+            : null,
       };
     });
     return res.status(200).json({ projects });
