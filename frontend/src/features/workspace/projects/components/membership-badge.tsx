@@ -16,7 +16,7 @@ function MembershipBadge({ role }: Readonly<MembershipBadgeProps>) {
       ) : (
         <User size={12} strokeWidth={2.5} />
       )}
-      {role}
+      {role.replace("_", " ")}
     </Badge>
   );
 }

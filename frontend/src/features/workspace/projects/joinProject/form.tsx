@@ -1,28 +1,17 @@
 "use client";
-import { useActionState } from "react";
 import Input from "@/shared/components/ui/input/input";
 import Button from "@/shared/components/ui/button/button";
 import joinProjectAction from "./joinProjectAction";
-import useToast from "@/shared/hooks/useToast";
+import useForm from "@/shared/hooks/useForm";
 
-interface State {
-  success: boolean | null;
-  error: string | null;
-  timespan: number;
-}
 function Form() {
-  const [state, formAction, isPending] = useActionState<State, FormData>(
-    joinProjectAction,
-    { success: null, error: null, timespan: Date.now() },
-  );
-  useToast({
+  const { formAction, isPending } = useForm({
+    action: joinProjectAction,
     successMessage: "Project joined successfully",
     errorMessage: "Failed to join project",
-    success: state.success,
-    timespan: state.timespan,
   });
   return (
-    <form action={formAction} className="flex flex-col gap-5">
+    <form action={formAction} className="flex flex-col gap-5 w-4/5">
       <Input
         type="text"
         placeholder="Invitation code"

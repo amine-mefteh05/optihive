@@ -29,7 +29,7 @@ function ProjectCard({
   return (
     <div
       {...props}
-      className="flex flex-col gap-2 rounded-lg shadow-lg w-64 h-80 border border-foreground/20 overflow-hidden cursor-pointer hover:bg-foreground/5"
+      className="flex flex-col gap-2 rounded-lg shadow-lg card-dimensions border border-foreground/20 overflow-hidden cursor-pointer hover:bg-foreground/5"
     >
       <h4 className="text-2xl font-bold text-center bg-primary/50">
         {projectName}

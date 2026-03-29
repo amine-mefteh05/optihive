@@ -1,7 +1,11 @@
 "use server";
 import api from "@/lib/axiosInstance";
 import { revalidateTag } from "next/cache";
-export async function createProjectAction(formData: FormData) {
+import type { useFormState } from "@/shared/hooks/useForm";
+export async function createProjectAction(
+  _prevState: useFormState,
+  formData: FormData,
+): Promise<useFormState> {
   const projectName = formData.get("name") as string;
   const description = formData.get("description") as string;
   const deadline = formData.get("deadline") as string;
@@ -10,11 +14,15 @@ export async function createProjectAction(formData: FormData) {
     month: "2-digit",
     day: "2-digit",
   }).format(new Date(deadline));
-  const project = await api.post("/projects/create", {
-    projectName,
-    projectDescription: description,
-    deadline: usDeadline,
-  });
-  revalidateTag("projects", "max");
-  return project;
+  try {
+    await api.post("/projects/create", {
+      projectName,
+      projectDescription: description,
+      deadline: usDeadline,
+    });
+    revalidateTag("projects", "max");
+    return { success: true, timespan: Date.now() };
+  } catch (error) {
+    return { success: false, timespan: Date.now() };
+  }
 }
