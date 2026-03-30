@@ -16,15 +16,15 @@ function Form() {
         type="text"
         placeholder="Invitation code"
         name="invitationCode"
-        className="text-sm px-2 py-1!"
+        className="text-md font-bold px-2 py-4!"
         required
       />
       <Button
         type="submit"
-        size="sm"
+        size="lg"
         variant="primary"
         disabled={isPending}
-        className="cursor-pointer disabled:cursor-not-allowed disabled:opacity-50"
+        className="cursor-pointer font-bold disabled:cursor-not-allowed disabled:opacity-50"
       >
         {isPending ? "Joining..." : "Join project"}
       </Button>

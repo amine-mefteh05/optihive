@@ -4,7 +4,7 @@ import Image from "next/image";
 import Accordion from "@/shared/components/ui/accordion/accordion";
 function Navbar() {
   return (
-    <nav className="flex items-center justify-between pr-5 w-full bg-gray-500/10 backdrop-blur-sm shadow-lg">
+    <nav className="flex items-center justify-between pr-5 w-full bg-foreground/5 border-b border-foreground/20 backdrop-blur-sm shadow-lg">
       <Image
         src="/logo.png"
         alt="logo"

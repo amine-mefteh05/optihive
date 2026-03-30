@@ -13,7 +13,7 @@ function Form() {
   return (
     <form
       action={formAction}
-      className="flex flex-col gap-5 shadow-lg p-4 border border-foreground/20 rounded-lg w-1/2"
+      className="flex flex-col gap-5 shadow-lg p-4 border border-foreground/20 rounded-lg flex-1"
     >
       <label htmlFor="name">
         Project Name : <span className="text-red-500 text-xl font-bold">*</span>
