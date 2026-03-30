@@ -5,7 +5,7 @@ type FieldProps = {
 
 function Field({ label, value }: FieldProps) {
   return (
-    <div className="group flex flex-col gap-0.5">
+    <div className="group flex justify-between gap-0.5">
       <span className="text-[11px] font-semibold uppercase tracking-widest text-foreground/40 transition-colors duration-200 ">
         {label}
       </span>

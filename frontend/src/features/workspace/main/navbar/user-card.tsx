@@ -16,13 +16,13 @@ async function UserCard() {
     );
   }
   return (
-    <div className="flex items-center gap-2 p-0">
+    <div className="flex items-center gap-2 p-0 border border-foreground/20 rounded-lg px-2 py-1 shadow-md">
+      <p className="font-bold">{user?.username ?? "user"}</p>
       <Avatar
         src={`/avatars/${user?.avatar ?? 1}.svg`}
         fallback={user?.username ?? "user"}
         className="rounded-full"
       />
-      <p>{user?.username ?? "user"}</p>
     </div>
   );
 }

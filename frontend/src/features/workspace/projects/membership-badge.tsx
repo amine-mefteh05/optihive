@@ -4,9 +4,9 @@ type MembershipBadgeProps = {
   role: "project_manager" | "member";
 };
 
-const badgeColor: Record<MembershipBadgeProps["role"], "blue" | "green"> = {
-  project_manager: "blue",
-  member: "green",
+const badgeColor: Record<MembershipBadgeProps["role"], "orange" | "gray"> = {
+  project_manager: "orange",
+  member: "gray",
 };
 function MembershipBadge({ role }: Readonly<MembershipBadgeProps>) {
   return (
